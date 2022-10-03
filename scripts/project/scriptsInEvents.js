@@ -1,10 +1,6 @@
 import {colors} from './Settings.js';
 
-
-
 export let boundBoxes = [];
-
-
 
 export function rand(start,end)
 {
@@ -17,6 +13,12 @@ export function lerp(x,y,val)
 	
 	return x + (y-x)*v;
 	
+}
+
+export function postText(value){
+	let postMsg = '';
+	console.log('iFrame sender: ' + value) 
+	parent.postMessage(value, "*")
 }
 
 
@@ -169,6 +171,11 @@ const scriptsInEvents = {
 		runtime.objects.DieParticle.createInstance(1,player.x,player.y).colorRgb = colors[1];
 		runtime.objects.DieParticle.createInstance(1,player.x,player.y).colorRgb = colors[2];
 		runtime.objects.DieParticle.createInstance(1,player.x,player.y).colorRgb = colors[3];
+	},
+
+	async Egame_Event35_Act2(runtime, localVars)
+	{
+		postText(runtime.globalVars.finalScore)
 	}
 
 };

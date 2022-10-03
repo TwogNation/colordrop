@@ -1,7 +1,7 @@
 
 // Put any global functions etc. here
 
-
+var data = '';
 
 runOnStartup(async runtime =>
 {
@@ -9,7 +9,13 @@ runOnStartup(async runtime =>
 	// Note layouts, objects etc. are not yet available.
 	
 	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
-});
+	
+	
+	self.addEventListener("message", (event) => { 
+		data = event.data;
+		console.log("iFrame Received: " + data);
+	}, false);
+	});
 
 function OnBeforeProjectStart(runtime)
 {

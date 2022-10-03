@@ -11,3 +11,10 @@ function lerp(x,y,val)
 	return x + (y-x)*v;
 	
 }
+
+
+function postText(value){
+	let postMsg = '';
+	console.log('iFrame sender: ' + value) 
+	parent.postMessage(value, "*")
+}
