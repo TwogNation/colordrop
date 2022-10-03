@@ -2,6 +2,7 @@ import {colors} from './Settings.js';
 
 export let boundBoxes = [];
 
+
 export function rand(start,end)
 {
 	return Math.floor(Math.random()*(end-start)) + start;
@@ -16,7 +17,6 @@ export function lerp(x,y,val)
 }
 
 export function postText(value){
-	let postMsg = '';
 	console.log('iFrame sender: ' + value) 
 	parent.postMessage(value, "*")
 }
@@ -141,14 +141,14 @@ const scriptsInEvents = {
 		item.y<cam.y-runtime.layout.height).forEach(item=>item.destroy());
 	},
 
-	async Egame_Event26_Act2(runtime, localVars)
+	async Egame_Event25_Act2(runtime, localVars)
 	{
 		//Spawn Jump Particle Effect
 		const player = runtime.objects.Player.getFirstInstance();
 		runtime.objects.JumpEffect.createInstance(1,player.x,player.y).colorRgb = colors[player.instVars.color];
 	},
 
-	async Egame_Event28_Act2(runtime, localVars)
+	async Egame_Event27_Act2(runtime, localVars)
 	{
 		//spawn Color change Particles
 		const player = runtime.objects.Player.getFirstInstance();
@@ -156,14 +156,14 @@ const scriptsInEvents = {
 		runtime.objects.ColorChange.createInstance(1,player.x,player.y).colorRgb = colors[+runtime.globalVars.Temp];
 	},
 
-	async Egame_Event33_Act1(runtime, localVars)
+	async Egame_Event32_Act1(runtime, localVars)
 	{
 		//Update the player Color
 		const player = runtime.objects.Player.getFirstInstance();
 		player.colorRgb = colors[player.instVars.color];
 	},
 
-	async Egame_Event34_Act1(runtime, localVars)
+	async Egame_Event33_Act1(runtime, localVars)
 	{
 		//spawn die particle effect all color
 		const player = runtime.objects.Player.getFirstInstance();
@@ -173,7 +173,7 @@ const scriptsInEvents = {
 		runtime.objects.DieParticle.createInstance(1,player.x,player.y).colorRgb = colors[3];
 	},
 
-	async Egame_Event35_Act2(runtime, localVars)
+	async Egame_Event34_Act2(runtime, localVars)
 	{
 		postText(runtime.globalVars.finalScore)
 	}

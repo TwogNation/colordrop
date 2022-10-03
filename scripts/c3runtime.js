@@ -3974,21 +3974,19 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
-		C3.Plugins.Browser.Acts.GoToURL,
-		C3.Plugins.System.Acts.RestartLayout,
 		C3.Plugins.Sprite.Acts.SetY,
 		C3.Plugins.Sprite.Exps.Y,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
-		C3.ScriptsInEvents.Egame_Event26_Act2,
+		C3.ScriptsInEvents.Egame_Event25_Act2,
 		C3.Plugins.Audio.Acts.Play,
 		C3.Plugins.Sprite.Cnds.OnCollision,
-		C3.ScriptsInEvents.Egame_Event28_Act2,
+		C3.ScriptsInEvents.Egame_Event27_Act2,
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.Sprite.Acts.Spawn,
+		C3.ScriptsInEvents.Egame_Event32_Act1,
 		C3.ScriptsInEvents.Egame_Event33_Act1,
-		C3.ScriptsInEvents.Egame_Event34_Act1,
 		C3.Plugins.Sprite.Cnds.OnDestroyed,
-		C3.ScriptsInEvents.Egame_Event35_Act2,
+		C3.ScriptsInEvents.Egame_Event34_Act2,
 		C3.Plugins.Sprite.Cnds.OnCreated,
 		C3.Plugins.System.Exps.choose,
 		C3.Plugins.Text.Cnds.OnCreated,
@@ -4167,10 +4165,6 @@ self.C3_ExpressionFuncs = [
 			return () => ((v0.GetValue()) ? (v1.GetValue()) : (0));
 		},
 		() => "Best",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => and("BEST - ", v0.GetValue());
-		},
 		() => 0.5,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -4187,12 +4181,15 @@ self.C3_ExpressionFuncs = [
 			return () => ((v0.GetValue()) ? ("Off") : ("On"));
 		},
 		() => "MenuPanel",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => and("BEST - ", v0.GetValue());
+		},
 		() => "none",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => ((v0.GetValue()) ? (0) : (1));
 		},
-		() => "http://www.google.com",
 		() => "Game Over",
 		() => "Player",
 		p => {
