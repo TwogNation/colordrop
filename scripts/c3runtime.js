@@ -4575,6 +4575,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.LocalStorage.Exps.ItemValue,
 		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.ScriptsInEvents.Egame_Event13_Act1,
+		C3.Plugins.Text.Acts.Destroy,
 		C3.Plugins.LocalStorage.Acts.GetItem,
 		C3.Plugins.System.Acts.WaitForPreviousActions,
 		C3.Plugins.System.Cnds.LayerVisible,
@@ -4644,6 +4645,7 @@ self.C3_JsPropNameTable = [
 	{Audio: 0},
 	{Browser: 0},
 	{ErrorText: 0},
+	{version: 0},
 	{Obstacles: 0},
 	{GameState: 0},
 	{LastObstacleY: 0},
@@ -4685,6 +4687,7 @@ self.InstanceType = {
 	Audio: class extends self.IInstance {},
 	Browser: class extends self.IInstance {},
 	ErrorText: class extends self.ITextInstance {},
+	version: class extends self.ITextInstance {},
 	Obstacles: class extends self.ISpriteInstance {}
 }
 }
